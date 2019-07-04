@@ -1,0 +1,131 @@
+1. Creating a GIT Repository
+
+Create  a folder name git-tutorial
+go inside this folder and rum below command
+$git init
+
+At this point you have created empty git repository or you have initialized git repository.
+
+2. Adding and removing files
+
+	$git status
+	
+	To add a file in staging area
+	
+	$git add {filename}
+	
+	If multiple files to add
+	
+	$git add .
+	
+	To remove a fie from staging area
+	
+	$git rm -f {filename} //force remove
+	
+	Commiting a file
+	
+	$git commit -m "My first commit"
+	
+	Check the log
+	
+	$git log
+	
+	Git Checkout : a ways to go back and forth different version and download
+	
+	$git checkout {branchId/commitId}
+	
+	$git commit master // Latest
+	
+	Git Revert and Reset
+	
+	Gitignore : If you don't want to track any file
+	
+	create a file name .gitignore and write the filnames which you don't want to track. Add and commit .gitignore file.
+	
+	Git Branches:
+	
+	To create a new branch let say dev, issue the below command
+	$git checkout -b dev
+	
+	This will not only create a new branch dev, but switched to new branch.
+	
+	$git checkout master // This will switch to master branch
+	
+	$git branch qa
+	
+	//Create a new branch qa but not switched to qa branch.
+	
+	//List all the branch
+	
+	$git branch -a
+	
+	//to switch dev branch
+	
+	$git checkout dev
+	
+	//To delete a branch qa
+	
+	$git branch -d qa
+	
+	Merge branch:
+	
+	$git checkout master
+	
+	$git merge dev
+	
+	https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+	
+	Connecting your local repository with Github:
+	
+	Create a repository let say d:\mynewrepo
+	
+	go to mynewrepo and issue below command
+	
+	$git init
+	
+	$git remote add origin {github repository link}
+	
+	Pushing and Pulling to & from a GitHub repository.
+	
+	To pull the code from remote master branch
+	
+	$git pull origin master
+	
+	To puh the code to remote master branch
+	
+	$git push -u origin master
+	
+	if you are already in remote master branch then below command also works.
+	
+	$git push
+	$git pull
+	
+	Deleting a branch:
+	
+	Case Study:
+	Suppose you have code base in master branch. Now there is some error in code base. You pull the code on local machine.
+	fix the error. create a new branch. push the code in new branch. merge the code from new branch to master branch and then delete
+	the new branch.
+
+	$git pull
+	
+	$git checkout -b error1 // Create a new branch and this is current branch
+	
+	Now you fixed the error in code.
+	
+	$git add .
+	
+	$git commit -m "Fixed Error"
+
+	$git checkout master
+	
+	$git merge error1
+	
+	Till now the branch you created, is on your machine, so you need to push it on remote github.
+	
+	$git push origin error1 // This will add branch error1 to github.
+	
+	$git push origin --delete error1 // This will delete the branch
+	
+	
+
